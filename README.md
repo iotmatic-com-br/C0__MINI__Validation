@@ -2,7 +2,7 @@
 
 A **C0_MINI** é uma placa de desenvolvimento ultracompacta desenvolvida pela [**IoTmatic.com.br**](https://iotmatic.com.br), baseada no microcontrolador **STM32C011F6P6** da STMicroelectronics. 
 
-![C0_MINI 3D View](3D_View.jpg)
+![C0_MINI 3D View](3D%20View.jpg)
 
 ---
 
