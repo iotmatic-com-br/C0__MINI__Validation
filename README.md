@@ -41,7 +41,7 @@ Devido às características de multiplexação do encapsulamento TSSOP-20 do STM
 
 | Vista Superior (Top PCB) | Vista Inferior (Bottom PCB) |
 | :---: | :---: |
-| ![TOP C0_MINI](TOP_C0_MINI.jpg) | ![BOTTOM C0_MINI](BOTTOM_C0_MINI.jpg) |
+| ![TOP C0_MINI](TOP_C0_MINI.jpeg) | ![BOTTOM C0_MINI](BOTTOM_C0_MINI.jpeg) |
 
 ---
 
