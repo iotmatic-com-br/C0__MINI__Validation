@@ -1,0 +1,49 @@
+# ---- Arquivos de Esquema e Layout (DipTrace) ----
+/SCH_PCB__C0_MINI/*.dch
+/SCH_PCB__C0_MINI/*.dip
+
+# ==========================================
+# STM32CubeIDE / Eclipse (Build & Metadata)
+# ==========================================
+Debug/
+Release/
+x64/
+x86/
+.metadata/
+.tmp/
+*.launch
+.settings/
+
+# ==========================================
+# Arquivos Binários e de Compilação (GCC ARM)
+# ==========================================
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.su
+*.cyclo
+*.o
+*.d
+*.drl
+*.log
+*.a
+*.lib
+
+# ==========================================
+# Arquivos do Sistema Operacional
+# ==========================================
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
