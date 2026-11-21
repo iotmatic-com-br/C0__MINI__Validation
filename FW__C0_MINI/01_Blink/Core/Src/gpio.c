@@ -45,17 +45,51 @@ void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LEDONBOARD_GPIO_Port, LEDONBOARD_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LEDB7_Pin|LEDB6_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : LEDONBOARD_Pin */
-  GPIO_InitStruct.Pin = LEDONBOARD_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, LEDC14_Pin|LEDC15_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LEDA0_Pin|LEDA1_Pin|LEDA2_Pin|LEDONBOARD_Pin
+                          |LEDA5_Pin|LEDA6_Pin|LEDA7_Pin|LEDA8_Pin
+                          |LEDA9_Pin|LEDA10_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LEDB7_Pin LEDB6_Pin */
+  GPIO_InitStruct.Pin = LEDB7_Pin|LEDB6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LEDONBOARD_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LEDC14_Pin LEDC15_Pin */
+  GPIO_InitStruct.Pin = LEDC14_Pin|LEDC15_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LEDA0_Pin LEDA1_Pin LEDA2_Pin LEDONBOARD_Pin
+                           LEDA5_Pin LEDA6_Pin LEDA7_Pin LEDA8_Pin
+                           LEDA9_Pin LEDA10_Pin */
+  GPIO_InitStruct.Pin = LEDA0_Pin|LEDA1_Pin|LEDA2_Pin|LEDONBOARD_Pin
+                          |LEDA5_Pin|LEDA6_Pin|LEDA7_Pin|LEDA8_Pin
+                          |LEDA9_Pin|LEDA10_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SW1_Pin */
+  GPIO_InitStruct.Pin = SW1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(SW1_GPIO_Port, &GPIO_InitStruct);
 
 }
 

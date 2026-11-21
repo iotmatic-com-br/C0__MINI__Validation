@@ -54,7 +54,15 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void SwDelay()
+{
+	// A cada delay 'inverte' o LEDONBOARD
+	HAL_GPIO_TogglePin(LEDONBOARD_GPIO_Port, LEDONBOARD_Pin);
+	if (HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin))
+		HAL_Delay(100);
+	else
+		HAL_Delay(500);
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,13 +102,48 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-	  // Blink
-	  HAL_GPIO_WritePin(LEDONBOARD_GPIO_Port, LEDONBOARD_Pin, 1);
-	  HAL_Delay(500);
-	  HAL_GPIO_WritePin(LEDONBOARD_GPIO_Port, LEDONBOARD_Pin, 0);
-	  HAL_Delay(500);
+	  // Pisca o LEDONBOARD e cada led na ordam da PCB:  B7-C14-C15-A0-A1-A2-A5-A6-A8-A9-A10-B6-A7
+	  // Se a tecla SW1 em A3 estiver pressionada pisca mais rapidamente
+	  HAL_GPIO_WritePin(LEDB7_GPIO_Port, LEDB7_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDB7_GPIO_Port, LEDB7_Pin, 0);	  SwDelay();
 
+	  HAL_GPIO_WritePin(LEDC14_GPIO_Port, LEDC14_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDC14_GPIO_Port, LEDC14_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDC15_GPIO_Port, LEDC15_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDC15_GPIO_Port, LEDC15_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA0_GPIO_Port, LEDA0_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA0_GPIO_Port, LEDA0_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA1_GPIO_Port, LEDA1_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA1_GPIO_Port, LEDA1_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA2_GPIO_Port, LEDA2_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA2_GPIO_Port, LEDA2_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA5_GPIO_Port, LEDA5_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA5_GPIO_Port, LEDA5_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA6_GPIO_Port, LEDA6_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA6_GPIO_Port, LEDA6_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA8_GPIO_Port, LEDA8_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA8_GPIO_Port, LEDA8_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA9_GPIO_Port, LEDA9_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA9_GPIO_Port, LEDA9_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA10_GPIO_Port, LEDA10_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA10_GPIO_Port, LEDA10_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDB6_GPIO_Port, LEDB6_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDB6_GPIO_Port, LEDB6_Pin, 0);	  SwDelay();
+
+	  HAL_GPIO_WritePin(LEDA7_GPIO_Port, LEDA7_Pin, 1);	  SwDelay();
+	  HAL_GPIO_WritePin(LEDA7_GPIO_Port, LEDA7_Pin, 0);	  SwDelay();
+
+	  /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }

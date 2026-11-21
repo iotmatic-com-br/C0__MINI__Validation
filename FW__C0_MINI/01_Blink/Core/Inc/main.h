@@ -57,8 +57,36 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LEDB7_Pin GPIO_PIN_7
+#define LEDB7_GPIO_Port GPIOB
+#define LEDC14_Pin GPIO_PIN_14
+#define LEDC14_GPIO_Port GPIOC
+#define LEDC15_Pin GPIO_PIN_15
+#define LEDC15_GPIO_Port GPIOC
+#define LEDA0_Pin GPIO_PIN_0
+#define LEDA0_GPIO_Port GPIOA
+#define LEDA1_Pin GPIO_PIN_1
+#define LEDA1_GPIO_Port GPIOA
+#define LEDA2_Pin GPIO_PIN_2
+#define LEDA2_GPIO_Port GPIOA
+#define SW1_Pin GPIO_PIN_3
+#define SW1_GPIO_Port GPIOA
 #define LEDONBOARD_Pin GPIO_PIN_4
 #define LEDONBOARD_GPIO_Port GPIOA
+#define LEDA5_Pin GPIO_PIN_5
+#define LEDA5_GPIO_Port GPIOA
+#define LEDA6_Pin GPIO_PIN_6
+#define LEDA6_GPIO_Port GPIOA
+#define LEDA7_Pin GPIO_PIN_7
+#define LEDA7_GPIO_Port GPIOA
+#define LEDA8_Pin GPIO_PIN_8
+#define LEDA8_GPIO_Port GPIOA
+#define LEDA9_Pin GPIO_PIN_9
+#define LEDA9_GPIO_Port GPIOA
+#define LEDA10_Pin GPIO_PIN_10
+#define LEDA10_GPIO_Port GPIOA
+#define LEDB6_Pin GPIO_PIN_6
+#define LEDB6_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

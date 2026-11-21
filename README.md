@@ -28,12 +28,21 @@ A **C0_MINI** é uma placa de desenvolvimento ultracompacta desenvolvida pela [*
 * **LED Onboard:** Conectado ao pino **`PA4`**
 
 ### **Ajustes de Remapeamento de Pinos (Pinout)**
-Devido às características de multiplexação do encapsulamento TSSOP-20 do STM32C011, o layout foi ajustado para expor as seguintes funções de comunicação:
+Devido às características de multiplexação do encapsulamento TSSOP-20 do STM32C011, o firmware de validação foi ajustado para expor as seguintes funções de comunicação:
 
 | Pino Físico / Função Original | Ajuste / Mapeamento de Hardware | Periférico Utilizado |
 | :---: | :---: | :--- |
 | **`PA11`** | **`PA9`** | **USART1** (`TX`/`RX`) ajustada  |
 | **`PA12`** | **`PA10`** | para `PA9` e `PA10` |
+
+### **Firmware de validação da PCB **
+Todas as placas são entregues montadas, com firmware de validação gravado e testadas.
+Ao alimentar a placa, os I/Os alternarão entre HIGH e LOW na disposição da PCB:
+	B7 -> C14 -> C15 -> A0 -> A1 -> A2 -> A5 -> A6 -> A8 -> A9 -> A10 -> B6 -> A7, repete o ciclo
+Para cada I/O na sequência o LEDONBOARD piscará junto.
+O pino de I/O PA3 esta configurado para entrada com pull-up. 
+Colocando uma tecla, estiver pressionada pisca mais rapidamente.
+
 
 ---
 
